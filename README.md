@@ -16,26 +16,37 @@ bower install error-polyfill
 
 ### Environment compatibility
 
-The framework succeeded the tests on
+I support the following environments:
 
- - **Node.js** v4.2 and v5.x
+- Windows 7
+ - **Node.js** v4.2
  - **Chrome** 51.0
  - **Firefox** 47.0 and 48.0
  - **Internet Explorer** 11.0
  - **PhantomJS** 2.1
+ - Opera 39.0 *(buggy Karma launcher)*
+ - Microsoft edge *(no Karma launcher, no Windows 10 installer)*
+- Travis
+ - **Node.js** v5.x
+ - **Chrome** latest
+ - **Firefox** latest
+ - **PhantomJS** 2.1
+- Ubuntu 16
+ - Node.js latest *(not installed yet)*
+ - Firefox latest *(not installed yet)*
  
-by the usage of npm scripts under win7 x64.
-
-I wasn't able to test the framework by **Opera** since the Karma launcher is buggy, but I try to support that browser as well.
-I try to do graceful degradation, so the lib should work more or less by non-tested browsers, except those without ES5 support.
-ES5 features are tested by the [capability](https://github.com/inf3rno/capability) lib. The pre-ES5 environments are not supported. 
+The polyfill might work on not supported environments as well due to its adaptive design.
 
 I used [Yadda](https://github.com/acuminous/yadda) to write BDD tests.
 I used [Karma](https://github.com/karma-runner/karma) with [Browserify](https://github.com/substack/node-browserify) to test the framework in browsers.
 
 ### Requirements
 
-The [capability](https://github.com/inf3rno/capability) and the [o3](https://github.com/inf3rno/o3) libs are required.
+ES5 support is required, without that the lib throws an Error and stops working. 
+
+The ES5 features are tested by the [capability](https://github.com/inf3rno/capability) lib run time.
+Classes are created by the [o3](https://github.com/inf3rno/o3) lib.
+Utility functions are implemented in the [u3](https://github.com/inf3rno/u3) lib.
 
 ## API documentation
 
