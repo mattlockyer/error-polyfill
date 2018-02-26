@@ -3,7 +3,6 @@
   "version": "0.1.1",
   "description": "Javascript Error Polyfill",
   "keywords": [
-    "ES5",
     "error",
     "stack trace",
     "polyfill",
@@ -30,22 +29,20 @@
     ".npmignore",
     ".travis.yml",
     "package.json",
-    "features/",
-    "karma.conf.js",
-    "yadda.js"
+    "test/",
+    "karma.conf.js"
   ],
   "scripts": {
-    "test": "mocha --reporter spec yadda.js"
+    "test": "mocha --reporter spec test/"
   },
   "dependencies": {
-    "capability": "^0.2.4",
-    "o3": "^1.0.2",
+    "capability": "^0.2.5",
+    "o3": "^1.0.3",
     "u3": "^0.1.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^2.4.5",
-    "sinon": "^1.17.3",
-    "yadda": "^0.17.2"
+    "mocha": "^5.0.1",
+    "sinon": "^4.4.2"
   }
 }

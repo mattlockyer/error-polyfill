@@ -16,29 +16,23 @@ bower install error-polyfill
 
 ### Environment compatibility
 
-I support the following environments:
+Tested on the following environments:
 
-- Windows 7
- - **Node.js** v4.2
- - **Chrome** 51.0
- - **Firefox** 47.0 and 48.0
- - **Internet Explorer** 11.0
+Windows 7
+ - **Node.js** 9.6
+ - **Chrome** 64.0
+ - **Firefox** 58.0
+ - **Internet Explorer** 10.0, 11.0
  - **PhantomJS** 2.1
- - Opera 39.0 *(buggy Karma launcher)*
- - Microsoft edge *(no Karma launcher, no Windows 10 installer)*
-- Travis
- - **Node.js** v5.x
- - **Chrome** latest
- - **Firefox** latest
- - **PhantomJS** 2.1
-- Ubuntu 16
- - Node.js latest *(not installed yet)*
- - Firefox latest *(not installed yet)*
+ - **Opera** 51.0
+
+Travis
+ - **Node.js** 8, 9
+ - **Chrome**
+ - **Firefox**
+ - **PhantomJS**
  
-The polyfill might work on not supported environments as well due to its adaptive design.
-
-I used [Yadda](https://github.com/acuminous/yadda) to write BDD tests.
-I used [Karma](https://github.com/karma-runner/karma) with [Browserify](https://github.com/substack/node-browserify) to test the framework in browsers.
+The polyfill might work on other environments too due to its adaptive design. I use [Karma](https://github.com/karma-runner/karma) with [Browserify](https://github.com/substack/node-browserify) to test the framework in browsers.
 
 ### Requirements
 
@@ -60,9 +54,11 @@ require("error-polyfill");
 // <- your code here
 ```
 
+It is recommended to require the polyfill in your main script.
+
 ### Getting a past stack trace with `Error.getStackTrace`
 
-This static method is not part of the V8 Stack Trace API, but it is strongly recommended to **use `Error.getStackTrace(throwable)` instead of `throwable.stack`** to get the stack trace of Error instances!
+This static method is not part of the V8 Stack Trace API, but it is recommended to **use `Error.getStackTrace(throwable)` instead of `throwable.stack`** to get the stack trace of Error instances!
 
 Explanation:
 

@@ -4,6 +4,5 @@ node_modules/
 .npmignore
 .travis.yml
 bower.json
-features/
+test/
 karma.conf.js
-yadda.js

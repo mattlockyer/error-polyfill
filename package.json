@@ -3,7 +3,6 @@
   "version": "0.1.1",
   "description": "Javascript Error Polyfill",
   "keywords": [
-    "ES5",
     "error",
     "stack trace",
     "polyfill",
@@ -23,9 +22,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-node & npm run test-karma",
-    "test-node": "mocha --reporter spec yadda.js",
-    "test-karma": "karma start karma.conf.js"
+    "test": "npm run test-node & npm run test-browser",
+    "test-node": "mocha --reporter spec test/",
+    "test-browser": "karma start karma.conf.js"
   },
   "dependencies": {
     "capability": "^0.2.5",
@@ -33,19 +32,19 @@
     "u3": "^0.1.0"
   },
   "devDependencies": {
-    "browserify": "10.2.6",
+    "browserify": "^16.1.0",
     "expect.js": "^0.3.1",
-    "karma": "^0.13.22",
-    "karma-browserify": "^5.0.2",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-firefox-launcher": "^1.0.0",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.2.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
     "karma-ie-launcher": "^1.0.0",
-    "karma-mocha": "^0.2.2",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "mocha": "^2.4.5",
-    "phantomjs-prebuilt": "^2.1.5",
-    "sinon": "^1.17.3",
-    "watchify": "^3.7.0",
-    "yadda": "^0.17.2"
+    "karma-mocha": "^1.3.0",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mocha": "^5.0.1",
+    "phantomjs-prebuilt": "^2.1.16",
+    "sinon": "^4.4.2",
+    "watchify": "^3.10.0"
   }
 }

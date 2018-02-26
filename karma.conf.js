@@ -1,28 +1,26 @@
 module.exports = function (config) {
-
     var options = {
         plugins: [
             "karma-browserify",
             "karma-chrome-launcher",
             "karma-firefox-launcher",
             "karma-ie-launcher",
+            "karma-opera-launcher",
             "karma-phantomjs-launcher",
             "karma-mocha"
         ],
         frameworks: ["browserify", "mocha"],
         files: [
-            "yadda.js",
             "index.js",
             "lib/**/*.js",
             {pattern: "lib/**/!(*.js)", included: false},
-            "features/**/*.js",
-            {pattern: "features/**/!(*.js)", included: false}
+            "test/**/*.js",
+            {pattern: "test/**/!(*.js)", included: false}
         ],
         preprocessors: {
             "index.js": ["browserify"],
-            "yadda.js": ["browserify"],
             "lib/**/*.js": ["browserify"],
-            "features/**/*.js": ["browserify"]
+            "test/**/*.js": ["browserify"]
         },
         client: {
             mocha: {
@@ -34,11 +32,38 @@ module.exports = function (config) {
             debug: true
         },
         browsers: [
-            "Chrome",
-            "Firefox",
-            "IE",
-            "PhantomJS"
+            "CH",
+            "FF",
+            "IE10",
+            "IE11",
+            "OP",
+            "PH"
         ],
+        customLaunchers: {
+            CH: {
+                base: "Chrome"
+            },
+            FF: {
+                base: "Firefox"
+            },
+            IE10: {
+                base: "IE",
+                'x-ua-compatible': 'IE=EmulateIE10',
+                flags: ["-extoff"] // Win7 requires it
+            },
+            IE11: {
+                base: "IE",
+                'x-ua-compatible': 'IE=EmulateIE11',
+                flags: ["-extoff"] // Win7 requires it
+            },
+            OP: {
+                base: "Opera",
+                flags: ["--ran-launcher"] // Win7 requires it
+            },
+            PH: {
+                base: "PhantomJS"
+            }
+        },
         reporters: ["progress"],
         port: 9876,
         colors: true,
@@ -49,17 +74,14 @@ module.exports = function (config) {
     };
 
     if (process.env.TRAVIS) {
-        options.customLaunchers = {
-            Chrome_travis_ci: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            }
-        };
+        options.customLaunchers.CH64.flags = ['--no-sandbox']; // Travis requires it, but would create debug.log on Win7
         options.browsers = [
-            "Chrome_travis_ci",
-            "Firefox",
-            //"IE", // MSIE is not supported by Travis
-            "PhantomJS"
+            "CH",
+            "FF",
+            //"IE10", // not supported by Travis
+            //"IE11", // not supported by Travis
+            //"OP", // not supported by Travis
+            "PH"
         ];
     }
 
