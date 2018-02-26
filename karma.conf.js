@@ -74,7 +74,7 @@ module.exports = function (config) {
     };
 
     if (process.env.TRAVIS) {
-        options.customLaunchers.CH64.flags = ['--no-sandbox']; // Travis requires it, but would create debug.log on Win7
+        options.customLaunchers.CH.flags = ['--no-sandbox']; // Travis requires it, but would create debug.log on Win7
         options.browsers = [
             "CH",
             "FF",
