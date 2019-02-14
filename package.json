@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/inf3rno/error-polyfill/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "test": "npm run test-node & npm run test-browser",
