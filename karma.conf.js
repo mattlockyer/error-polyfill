@@ -32,12 +32,12 @@ module.exports = function (config) {
             debug: true
         },
         browsers: [
-            "CH",
+            //"CH",
             "FF",
-            "IE10",
-            "IE11",
-            "OP",
-            "PH"
+            //"IE10",
+            //"IE11",
+            //"OP",
+            //"PH"
         ],
         customLaunchers: {
             CH: {

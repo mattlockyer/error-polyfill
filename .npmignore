@@ -3,6 +3,6 @@ node_modules/
 .gitignore
 .npmignore
 .travis.yml
-bower.json
 test/
 karma.conf.js
+package-lock.json
